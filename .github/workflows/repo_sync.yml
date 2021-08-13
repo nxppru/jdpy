@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: sync-lxk0301-scripts
+name: sync-ClassmateLin-scripts
 on:
   schedule:
     - cron: '1 0,15 * * *'
@@ -9,7 +9,7 @@ on:
   push:
     branches: [ master ]
   repository_dispatch:
-    types: sync-lxk0301-scripts
+    types: sync-ClassmateLin-scripts
 jobs:
   repo-sync:
     env:
@@ -22,11 +22,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync lxk0301-scripts
+      - name: sync ClassmateLin-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/nxppru/jd_scripts.git"
-          source_branch: "main"
+          source_repo: "https://github.com/ClassmateLin/jd_scripts.git"
+          source_branch: "master"
           destination_branch: "master"
           github_token: ${{ secrets.PAT }}   
