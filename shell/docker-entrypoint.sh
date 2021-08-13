@@ -6,7 +6,7 @@ if [ -z $CODE_DIR ]; then
 fi
 
 if [ -z $REPO_URL ]; then
-  REPO_URL=https://github.com/ClassmateLin/jd_scripts.git
+  REPO_URL=https://github.com/nxppru/jdpy.git
 fi
 
 if [ ! -d $CODE_DIR/.git ]; then
@@ -46,8 +46,8 @@ cd $CODE_DIR && git reset --hard && git pull;
 echo "pip install 安装最新依赖..."
 pip install -r $CODE_DIR/requirements.txt
 echo "更新docker-entrypoint..."
-cp $CODE_DIR/shell/docker-entrypoint.sh /bin/docker-entrypoint
-chmod a+x /bin/docker-entrypoint
+cp $CODE_DIR/shell/docker-entrypoint.sh /bin/docker-entrypoint.sh
+chmod a+x /bin/docker-entrypoint.sh
 chmod a+x /scripts/*.py
 
 echo "更新cron任务..."
